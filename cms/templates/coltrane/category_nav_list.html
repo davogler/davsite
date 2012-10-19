@@ -1,0 +1,9 @@
+{% block content %}
+    
+	<ul class="catnav">
+    	{% for category in categories %}
+      		<li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+    	{% endfor %}
+    </ul>
+{% endblock %}
+

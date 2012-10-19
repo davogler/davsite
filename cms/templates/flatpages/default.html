@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+
+{% block title %}{{ block.super }} | {{ flatpage.title }}{% endblock %}
+
+{% block bodyclass %}{{ block.super }}flatpage {{ flatpage.title|slugify }}{% endblock %}
+
+
+
+{% block content %}
+<h2>{{ object.title }}</h2> 
+{{ flatpage.content|safe }} 
+
+
+
+{% endblock %}

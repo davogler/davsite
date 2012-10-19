@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}| Home{% endblock %}
+
+{% block bodyclass %}home{% endblock %}
+
+{% block about %}
+<div class="watbar">
+		<a href="javascript:void(0)" class="toggler"><span class="open">hide</span><span class="closed">wait, what?</span></a>
+	</div>
+
+<section id = "about" class="clearfix">
+	<div class="aboutwrap">
+	<ul class="clearfix">
+		<li class="kek">
+			<h2>KEK Associates</h2>
+			<p>As a product design engineer, I help clients design and develop new products for a wide range of clients.</p>
+			<p><a href="#">See some of my work in this area.</a></p>
+			
+		</li>
+		
+		<li class="spark">
+			<h2>Sparkhouse</h2>
+			<p>As lead web developer and project manager, I design and develop websites for small businesses and organizations.</p>
+			<p><a href="#">See some of my work in this area.</a></p>
+		</li>
+		
+		<li class="fuel">
+			<h2>Fuel Network</h2>
+			<p>As editor for Fuel Your Product Design, I seek to inspire and connect other design professionals.</p>
+			<p><a href="#">Read some of what I have written.</a></p>
+		</li>
+	</ul>
+	</div>
+</section>
+
+
+{% endblock %}
+
+{% block content %}
+
+	<h2 class="goth">Featured</h2>
+	
+	
+	
+	
+{% for entry in object_list %}
+	<article>
+	<h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2> 
+
+	 <p class="date"><a href="{{ entry.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ entry.pub_date|date:"F j, Y" }}</p>  
+	{% if entry.thumb %}
+	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ entry.thumb.url_relative }}" alt="{{ entry.thumb.filename }}">  	
+	 {% endif %}
+	
+	{% if entry.excerpt_html %}
+		{{ entry.excerpt_html|safe }} 
+	{% else %}
+		{{ entry.body_html|truncatewords_html:"50"|safe }} 
+	{% endif %} 
+	
+	<footer>
+	<p><a href="{{ entry.get_absolute_url }}">Read more →</a></p>
+	</footer>
+	</article>
+{% endfor %} 
+
+
+
+
+
+	
+	
+	
+	<p class="moar"><a href="{% url coltrane.views.get_archive_index_first %}">Read more posts on the blog.</a></p>
+
+
+{% endblock %}

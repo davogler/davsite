@@ -1,0 +1,68 @@
+{% extends "coltrane/base_entries.html" %}
+
+{% block title %} {{ block.super }} | Entries on {{ day|date:"F j, Y" }} {% endblock %}
+
+{% block content %} 
+{% for entry in object_list %}
+	<article>
+	<h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2> 
+
+	<p class="date"><a href="{{ entry.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ entry.pub_date|date:"F j, Y" }}</p>  
+	{% if entry.thumb %}
+	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ entry.thumb.url_relative }}" alt="{{ entry.thumb.filename }}">  	
+	 {% endif %}
+	
+	{% if entry.excerpt_html %}
+		{{ entry.excerpt_html|safe }} 
+	{% else %}
+		{{ entry.body_html|truncatewords_html:"50"|safe }} 
+	{% endif %} 
+	
+	<footer>
+	<p><a href="{{ entry.get_absolute_url }}">Read more →</a></p>
+	</footer>
+	</article>
+{% endfor %} 
+
+<div class="pagination">
+    <span class="step-links">
+        {% if listy.has_previous %}
+            <a href="/blog/page/{{ listy.previous_page_number }}">Newer Posts</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ listy.number }} of {{ listy.paginator.num_pages }}.
+        </span>
+
+        {% if listy.has_next %}
+            <a href="/blog/page/{{ listy.next_page_number }}">Older Posts</a>
+        {% endif %}
+    </span>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block whatis %} 
+
+
+		
+		<div class="pagination">
+		    <span class="step-links">
+		        {% if listy.has_previous %}
+		            <a href="/blog/page/{{ listy.previous_page_number }}">previous</a>
+		        {% endif %}
+		
+		        <span class="current">
+		            Page {{ listy.number }} of {{ listy.paginator.num_pages }}.
+		        </span>
+		
+		        {% if listy.has_next %}
+		            <a href="/blog/page/{{ listy.next_page_number }}">next</a>
+		        {% endif %}
+		    </span>
+		</div>
+{% endblock %}
+

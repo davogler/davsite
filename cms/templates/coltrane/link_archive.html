@@ -1,0 +1,25 @@
+{% extends "coltrane/base_links.html" %} 
+
+{% block title %}{{ block.super }} | Latest entries{% endblock %}
+
+{% block content %} 
+<ul class="linklist">
+{% for link in latest %}
+	<li>
+	<h2><a href="{{ link.get_absolute_url }}">{{ link.title }}</a></h2> 
+		<p>Found on {{ link.pub_date|date:"F j, Y" }}</p> 
+	{% if link.excerpt %}
+		{{ link.excerpt|safe }} 
+	{% else %}
+		{{ link.description|truncatewords_html:"50"|safe }} 
+	{% endif %} 
+	<p><a href="{{ link.get_absolute_url }}">Visit site..</a></p>
+	</li>
+{% endfor %} 
+</ul> 
+{% endblock %}
+
+{% block whatis %} 
+<p>This is a list of the latest {{ latest.count }} links published in
+my blog.</p> 
+{% endblock %}

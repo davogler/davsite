@@ -1,0 +1,72 @@
+{% extends "work/base_projects.html" %}
+
+{% block title %}{{ block.super }} | {{ object.title }}{% endblock %}
+
+
+{% block content %}
+
+<div class="work-item">
+    	
+    	<div class="work-detail">
+	      	<h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
+	      	
+	      	<p>{{ object.description_html|safe }}</p>
+	     
+	      	
+      	</div>
+     
+	     <div class="work-image-slideshow">
+
+		     <ul class="work-image-list">
+		     	{% if object.detail_image1 %}
+		     	<li>
+		      		<img src="/media/{{ object.detail_image1.url_relative }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	{% if object.detail_image2 %}
+		      	<li>
+		      		<img src="/media/{{ object.detail_image2.url_relative }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	{% if object.detail_image3 %}
+		      	<li>
+		      		<img src="/media/{{ object.detail_image3.url_relative }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	{% if object.detail_image4 %}
+		      	<li>
+		      		<img src="/media/{{ object.detail_image4.url_relative }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      </ul>
+		      
+		      <div class="project-meta">
+			      <div class="cat">Category:
+				      {% for group in object.group.all %}
+				      {{ group.title }}
+				      {% endfor %}
+			      </div>
+			      
+			      <ul class="button-list">
+					<li><a  class="prev" href="#">← Previous</a></li>
+					<li><a  class="next" href="#">Next →</a></li>
+				  </ul>
+				
+			      <p class="more"><a href="{{ object.project_url }}">more...</a></p>
+			  </div>
+	      </div>
+      </div>
+
+
+
+    
+   
+{% endblock %}
+
+{% block whatis %}
+<p>This is a list of the latest links with the {{ tag.name }} tag.</p>
+{% endblock %}

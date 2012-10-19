@@ -1,0 +1,76 @@
+{% extends "coltrane/base_entries.html" %} 
+
+{% block title %}{{ block.super }} | {{ object.title }}{% endblock %}
+
+{% block bodyclass %}{{ block.super }} detail{% endblock %}
+
+{% block content %}
+	<article>
+	<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2> 
+
+	<p class="date"><a href="{{ object.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ object.pub_date|date:"F j, Y" }}</p>  
+	{% if object.thumb %}
+	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ object.thumb.url_relative }}" alt="{{ object.thumb.filename }}">  	
+	 {% endif %}
+	{{ object.body_html|safe }}
+	
+	<footer class="article">
+	 
+	
+	{% if object.categories.count %}
+	filed in the categor{{ object.categories.count|pluralize:"y,ies" }}
+	
+	{% for category in object.categories.all %}
+		<a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+		{% if forloop.last %}{% else %}
+		{% ifequal forloop.revcounter0 1 %}and {% else %}, {% endifequal %}
+		{% endif %}
+	{% endfor %}</p>
+	
+	{% else %}
+		<p>-</p>
+	{% endif %}
+	</footer>
+	</article> 
+
+<!-- Bring the noise.  Comment Section below -->
+{% ifequal object.enable_comments 1 %}
+
+	{% load comments %}
+	{% load markup %}
+	
+	
+
+	
+	<h2 class="goth">Comments</h2>
+	
+	{% load disqus_tags %}
+	{% disqus_dev %}
+	
+	{% disqus_show_comments %}
+	
+	
+
+{% else %}
+	<p class="nocomment">Vir sapit qui pauca loquitur, comments are closed.</p>
+{% endifequal %}
+
+{% endblock %} <!--end content block-->
+
+{% block whatis %}
+<p>This is an entry posted to my blog on {{ object.pub_date|date:"F j, Y"}}.</p>
+
+{% if object.categories.count %}
+<p>This entry is part of the categor{{ object.categories.count|pluralize:"y,ies" }}
+
+{% for category in object.categories.all %}
+	<a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+	{% if forloop.last %}{% else %}
+	{% ifequal forloop.revcounter0 1 %}and {% else %}, {% endifequal %}
+	{% endif %}
+{% endfor %}.</p>
+
+{% else %}
+	<p>This entry isn't part of any categories</p>
+{% endif %}
+{% endblock %}

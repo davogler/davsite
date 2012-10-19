@@ -1,0 +1,19 @@
+{% extends "coltrane/base_entries.html" %}
+{% block title %}{{ block.super }} | {{ year }}{% endblock %}
+
+{% block content %} 
+<h2 class="goth">Entries in {{ year }}</h2>
+<ul class="datelist">
+	{% for month in date_list %}
+		<li>
+   			<a href="{% url coltrane_entry_archive_month year,month|date: "b" %}"> 
+   				<h2>{{ month|date:"F" }}</h2>
+   			</a>
+		</li> 
+	{% endfor %}
+</ul> 
+{% endblock %}
+
+{% block whatis %} 
+<p>This is a list of months in {{ year }} in which I published entries in my blog.</p> 
+{% endblock %}

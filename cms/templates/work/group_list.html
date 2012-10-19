@@ -1,0 +1,11 @@
+{% extends "work/base_groups.html" %}
+
+{% block title %}{{ block.super }} | Groups{% endblock %}
+
+{% block content %}
+    <h2 class="goth">Portfolio Categories</h2>
+    {% for object in object_list %}
+      <p>ss<a href="{{ object.get_absolute_url }}">{{ object.title }}</a></p>
+    {% endfor %}
+{% endblock %}
+

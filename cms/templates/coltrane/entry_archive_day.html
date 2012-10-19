@@ -1,0 +1,32 @@
+{% extends "coltrane/base_entries.html" %}
+
+{% block title %} {{ block.super }} | Entries on {{ day|date:"F j, Y" }} {% endblock %}
+
+{% block content %} 
+<h2 class="goth">Entries on {{ day|date:"F j, Y" }}</h2>
+{% for entry in object_list %}
+	<article>
+	<h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2> 
+
+	<p class="date"><a href="{{ entry.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ entry.pub_date|date:"F j, Y" }}</p>  
+	{% if entry.thumb %}
+	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ entry.thumb.url_relative }}" alt="{{ entry.thumb.filename }}">  	
+	 {% endif %}
+	
+	{% if entry.excerpt_html %}
+		{{ entry.excerpt_html|safe }} 
+	{% else %}
+		{{ entry.body_html|truncatewords_html:"50"|safe }} 
+	{% endif %} 
+	
+	<footer>
+	<p><a href="{{ entry.get_absolute_url }}">Read more →</a></p>
+	</footer>
+	</article>
+{% endfor %} 
+{% endblock %}
+
+{% block whatis %} 
+<p>This is a list of entries published in my blog on {{ day|date:"F j, Y" }}.</p> 
+{% endblock %}
+

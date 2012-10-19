@@ -1,0 +1,5 @@
+{% if obj.excerpt_html %}
+{{ obj.description_html|safe }}
+{% else %}
+{{ obj.description_html|truncatewords_html:"50"|safe }}
+{% endif %}
