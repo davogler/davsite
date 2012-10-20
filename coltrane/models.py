@@ -48,6 +48,7 @@ class Entry(models.Model):
 	body = models.TextField()
 	body_html = models.TextField(editable=False, blank=False)
 	pub_date = models.DateTimeField()
+	tiny = models.TextField()
 	slug = models.SlugField(unique_for_date='pub_date')
 	thumb = FileBrowseField("Thumbnail", max_length=200, directory="images/", extensions=[".jpg",".png", ".gif"], blank=True, null=True)
 	pub_date = models.DateTimeField(default=datetime.datetime.now)

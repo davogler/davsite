@@ -13,6 +13,7 @@
 	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ object.thumb.url_relative }}" alt="{{ object.thumb.filename }}">  	
 	 {% endif %}
 	{{ object.body_html|safe }}
+	{{ object.tiny|safe }}
 	
 	<footer class="article">
 	 
