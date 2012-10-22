@@ -10,7 +10,7 @@
 
 	<p class="date"><a href="{{ object.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ object.pub_date|date:"F j, Y" }}</p>  
 	{% if object.thumb %}
-	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ object.thumb.url_relative }}" alt="{{ object.thumb.filename }}">  	
+	    <img class = "blurbthumb" src="{{ object.thumb.url }}" alt="{{ object.thumb.filename }}">  	
 	 {% endif %}
 	{{ object.body_html|safe }}
 	{{ object.tiny|safe }}

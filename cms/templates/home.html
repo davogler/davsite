@@ -50,7 +50,7 @@
 
 	 <p class="date"><a href="{{ entry.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ entry.pub_date|date:"F j, Y" }}</p>  
 	{% if entry.thumb %}
-	    <img class = "blurbthumb" src="{{ MEDIA_URL }}{{ entry.thumb.url_relative }}" alt="{{ entry.thumb.filename }}">  	
+	    <img class = "blurbthumb" src="{{ entry.thumb.url }}" alt="{{ entry.thumb.filename }}">  	
 	 {% endif %}
 	
 	{% if entry.excerpt_html %}

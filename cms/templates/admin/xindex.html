@@ -23,21 +23,7 @@
         {% if app_list %}
         
         
-        <!-- module below waas manually added to include filebrowser in the admin -->
-        <div class="module" >
-                    <h2><a href="{% url fb_browse %}" class="section">Filebrowser</a></h2>
-                    
-                        <div class="row">
-                            <a href="{% url fb_browse %}">{% trans "FileBrowser" %}</a>
-                            <ul class="actions">
-                                <li class="add-link"><a href="{% url fb_upload %}">Add</a></li>
-                                
-                                <li class="change-link"> <a href="{% url fb_browse %}" target="blank">Change</a></li>
-                            </ul>
-                       </div>               
-               </div>
-        <!-- end filebrowser additions -->
-        
+                
             {% for app in app_list %}
                 <div class="module" id="app_{{ app.name|lower }}">
                     <h2><a href="{{ app.app_url }}" class="section">{% trans app.name %}</a></h2>

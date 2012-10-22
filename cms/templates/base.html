@@ -150,7 +150,7 @@
 			{% for project in latest_projects %}
 			<li>
 				<a href="{{ project.get_absolute_url }}">
-				<img src="/media/{{ project.thumb.url_relative }}" alt="{{ project.title }}" title="{{ project.title }}">
+				<img src="{{ project.thumb.url }}" alt="{{ project.title }}" title="{{ project.title }}">
 				</a>
 			</li>
 			{% endfor %}
