@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from filebrowser.sites import site
 from django.conf import settings
 from coltrane.models import Entry
 from coltrane.feeds import CategoryFeed, LatestEntriesFeed, LatestLinksFeed
@@ -16,7 +17,7 @@ urlpatterns = patterns('',
     # Example:
     # (r'^cms/', include('cms.foo.urls')),
     (r'^$', 'coltrane.views.get_featured', ),
-    (r'^admin/filebrowser/', include('filebrowser.urls')),
+    (r'^admin/filebrowser/', include(site.urls)),
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^tinymce/', include('tinymce.urls')),
@@ -28,7 +29,7 @@ urlpatterns = patterns('',
 	
 	(r'^blog/', include('coltrane.urls.entries')),
 	(r'^comments/', include('django.contrib.comments.urls')),
-	(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', { 'feed_dict': feeds }),
+	(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', { 'feed_dict': feeds }),
 	(r'^work/', include('work.urls')),
 	(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
 	(r'^master.html/$', 'views.masterview'),
