@@ -58,12 +58,25 @@
 		      	
 		      	{% if object.detail_image4 %}
 		      	<li>
-		      		<img src="{{ object.detail_image4.urle }}" >
+		      		<img src="{{ object.detail_image4.url }}" >
 		      	</li>
 		      	{% endif %}
 		      	
+		      	{% if object.detail_image5 %}
+		      	<li>
+		      		<img src="{{ object.detail_image4.url }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	{% if object.detail_image6 %}
+		      	<li>
+		      		<img src="{{ object.detail_image4.url }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	
 		      </ul>
-		      
+		      		      
 		      <div class="project-meta">
 			      <div class="cat">Category:
 				      {% for group in object.group.all %}

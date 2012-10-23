@@ -3,6 +3,7 @@ from filebrowser.sites import site
 from django.conf import settings
 from coltrane.models import Entry
 from coltrane.feeds import CategoryFeed, LatestEntriesFeed, LatestLinksFeed
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 feeds = { 'entries': LatestEntriesFeed,
           'categories': CategoryFeed,
@@ -31,9 +32,12 @@ urlpatterns = patterns('',
 	(r'^comments/', include('django.contrib.comments.urls')),
 	(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', { 'feed_dict': feeds }),
 	(r'^work/', include('work.urls')),
+	#(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT }),
 	(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
 	(r'^master.html/$', 'views.masterview'),
 	#(r'^templates/master.html$', 'views.masterview'),
 	
 	
 )
+
+urlpatterns += staticfiles_urlpatterns()

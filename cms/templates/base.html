@@ -12,9 +12,9 @@
   <meta name="author" content="Design, Development, and Deployment by David Alan Vogler">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <link rel="stylesheet" href="{{ MEDIA_URL }}css/style.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
 
-  <script src="{{ MEDIA_URL }}js/libs/modernizr-2.0.6.min.js"></script>
+  <script src="{{ STATIC_URL }}js/libs/modernizr-2.0.6.min.js"></script>
   <script type="text/javascript" src="http://use.typekit.com/qvk0dul.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!--[if lt IE 9]>
@@ -189,11 +189,12 @@
 </div> <!--page-->	
 	
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{{ MEDIA_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-  <script defer src="{{ MEDIA_URL }}js/plugins.js"></script>
-  <script defer src="{{ MEDIA_URL }}js/script.js"></script>
-  <script defer src="{{ MEDIA_URL }}js/libs/jquery.cycle.lite.js"></script>
-  <script defer src="{{ MEDIA_URL }}js/browse_edit.js"></script> <!-- via http://www.punteney.com/writes/django-inpage-edit-object-link/ -->
+  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script defer src="{{ STATIC_URL }}js/plugins.js"></script>
+  <script defer src="{{ STATIC_URL }}js/script.js"></script>
+  <script defer src="{{ STATIC_URL }}js/libs/jquery.cycle.lite.js"></script>
+  <script defer src="{{ STATIC_URL }}js/libs/browse_edit.js"></script> <!-- via http://www.punteney.com/writes/django-inpage-edit-object-link/ -->
+  <script defer src="{{ STATIC_URL }}js/libs/jquery.fancybox.js"></script>
 
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->

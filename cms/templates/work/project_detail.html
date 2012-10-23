@@ -17,7 +17,7 @@
      
 	     <div class="work-image-slideshow">
 	     
-	     	<div class="work-image-wrapper">			  
+	     			  
 		     <ul class="work-image-list">
 		     	{% if object.detail_image1 %}
 		     	<li>
@@ -43,8 +43,21 @@
 		      	</li>
 		      	{% endif %}
 		      	
+		      	{% if object.detail_image5 %}
+		      	<li>
+		      		<img src="{{ object.detail_image4.url }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	{% if object.detail_image6 %}
+		      	<li>
+		      		<img src="{{ object.detail_image4.url }}" >
+		      	</li>
+		      	{% endif %}
+		      	
+		      	
 		      </ul>
-	     	</div>
+	     	
 		      <div class="project-meta">
 			      <div class="cat">Category:
 				      {% for group in object.group.all %}
