@@ -20,6 +20,13 @@ David Alan Vogler, 2011
      });
  });
  
+ //fancybox for portfolio images
+ 
+ $(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+ 
  //cookie-controlled status of collapsible about box
  
  var toggler_status = $.cookie("about_dav");

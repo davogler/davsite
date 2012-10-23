@@ -20,7 +20,7 @@
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
+  {% block extrahead %}{% endblock %}
 </head> 
 	 
 
@@ -144,13 +144,13 @@
 		<div id="taglist" class="footblock">
 		<h2>My Work</h2>
 		
-		
+		{% load fb_versions %}
 		<ul class="proj-thumbs clearfix">
 			{% get_latest work.project 5 as latest_projects  %}
 			{% for project in latest_projects %}
 			<li>
 				<a href="{{ project.get_absolute_url }}">
-				<img src="{{ project.thumb.url }}" alt="{{ project.title }}" title="{{ project.title }}">
+				<img src="{% version project.thumb 'thumbnail' %}" alt="{{ project.title }}" title="{{ project.title }}">
 				</a>
 			</li>
 			{% endfor %}
@@ -194,7 +194,7 @@
   <script defer src="{{ STATIC_URL }}js/script.js"></script>
   <script defer src="{{ STATIC_URL }}js/libs/jquery.cycle.lite.js"></script>
   <script defer src="{{ STATIC_URL }}js/libs/browse_edit.js"></script> <!-- via http://www.punteney.com/writes/django-inpage-edit-object-link/ -->
-  <script defer src="{{ STATIC_URL }}js/libs/jquery.fancybox.js"></script>
+  <script defer src="{{ STATIC_URL }}fancybox/jquery.fancybox.pack.js"></script>
 
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->

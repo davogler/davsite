@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block extrahead %}{{ block.super }} <link rel="stylesheet" href="{{ STATIC_URL }}fancybox/jquery.fancybox.css"> {% endblock %}
+
+
+
 {% block title %}| Projects{% endblock %}
 
 {% block bodyclass %}projects{% endblock %}

@@ -38,47 +38,57 @@
      
 	     <div class="work-image-slideshow">
 
-		     <ul class="work-image-list">
+		      <ul class="work-image-list">
 		     	{% if object.detail_image1 %}
 		     	<li>
-		      		<img src="{% version object.detail_image1 'work_thumbnail' %}" >
-		      		
+		     		<a class="fancybox" rel="gallery{{ object.id }}" href="{% version object.detail_image1 'large' %}">
+		      			<img src="{% version object.detail_image1 'work_thumbnail' %}" >
+		      		</a>
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image2 %}
 		      	<li>
-		      		<img src="{% version object.detail_image2 'work_thumbnail' %}" >
+		      		<a class="fancybox" rel="gallery{{ object.id }}" href="{% version object.detail_image2 'large' %}">
+		      			<img src="{% version object.detail_image2 'work_thumbnail' %}" >
+		      		</a>
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image3 %}
 		      	<li>
-		      		<img src="{% version object.detail_image3 'work_thumbnail' %}" >
+		      		<a class="fancybox" rel="gallery{{ object.id }}" href="{% version object.detail_image3 'large' %}">
+		      			<img src="{% version object.detail_image3 'work_thumbnail' %}" >
+		      		</a>
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image4 %}
 		      	<li>
-		      		<img src="{% version object.detail_image4 'work_thumbnail' %}" >
+		      		<a class="fancybox" rel="gallery{{ object.id }}" href="{% version object.detail_image4 'large' %}">
+		      			<img src="{% version object.detail_image4 'work_thumbnail' %}" >
+		      		</a>
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image5 %}
 		      	<li>
-		      		<img src="{% version object.detail_image5 'work_thumbnail' %}" >
+		      		<a class="fancybox" rel="gallery{{ object.id }}" href="{% version object.detail_image5 'large' %}">
+		      			<img src="{% version object.detail_image5 'work_thumbnail' %}" >
+		      		</a>
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image6 %}
 		      	<li>
-		      		<img src="{% version object.detail_image6 'work_thumbnail' %}" >
+		      		<a class="fancybox" rel="gallery{{ object.id }}" href="{% version object.detail_image6 'large' %}">
+		      			<img src="{% version object.detail_image6 'work_thumbnail' %}" >
+		      		</a>
 		      	</li>
 		      	{% endif %}
 		      	
 		      	
-		      </ul>
-		      		      
+		      </ul>		      		      
 		      <div class="project-meta">
 			      <div class="cat">Category:
 				      {% for group in object.group.all %}
