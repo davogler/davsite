@@ -739,6 +739,56 @@ a.permalink:hover{
 	background: transparent url('../i/permalink.png') no-repeat left -14px;
 }
 
+pre{
+
+background: url(../i/dav_header.png) left top #4d4d4d;
+-webkit-border-radius: 0.4em;
+-moz-border-radius: 0.4em;
+-ms-border-radius: 0.4em;
+-o-border-radius: 0.4em;
+border-radius: 0.4em;
+
+line-height: 1.45em;
+font-size: 13px;
+margin-bottom: 2.1em;
+padding: .8em 1em;
+color: #c1c7c7;
+overflow: auto;
+width: 98%;
+overflow-y: hidden;
+
+
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap !important;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	overflow-x: hidden;
+	
+}
+
+.mono, pre, code, tt, p code, li code {
+font-family: inconsolata,monospace;
+}
+
+p code, li code {
+	display: inline-block;
+	white-space: no-wrap;
+	line-height: 1.5em;
+	color: #555;
+	border: 1px solid #b3b2b2;
+	-webkit-border-radius: 0.4em;
+	-moz-border-radius: 0.4em;
+	-ms-border-radius: 0.4em;
+	-o-border-radius: 0.4em;
+	border-radius: 0.4em;
+	padding: 0 .3em;
+	xmargin: -1px 0;
+	background-color: #ecece4;
+	
+	
+}
+
 
 footer.article{
 	font-style: italic;

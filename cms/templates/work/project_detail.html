@@ -2,6 +2,7 @@
 
 {% block title %}{{ block.super }} | {{ object.title }}{% endblock %}
 
+{% load fb_versions %}
 
 {% block content %}
 
@@ -21,37 +22,38 @@
 		     <ul class="work-image-list">
 		     	{% if object.detail_image1 %}
 		     	<li>
-		      		<img src="{{ object.detail_image1.url }}" >
+		      		<img src="{% version object.detail_image1 'work_thumbnail' %}" >
+		      		
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image2 %}
 		      	<li>
-		      		<img src="{{ object.detail_image2.url }}" >
+		      		<img src="{% version object.detail_image2 'work_thumbnail' %}" >
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image3 %}
 		      	<li>
-		      		<img src="{{ object.detail_image3.url }}" >
+		      		<img src="{% version object.detail_image3 'work_thumbnail' %}" >
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image4 %}
 		      	<li>
-		      		<img src="{{ object.detail_image4.url }}" >
+		      		<img src="{% version object.detail_image4 'work_thumbnail' %}" >
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image5 %}
 		      	<li>
-		      		<img src="{{ object.detail_image4.url }}" >
+		      		<img src="{% version object.detail_image5 'work_thumbnail' %}" >
 		      	</li>
 		      	{% endif %}
 		      	
 		      	{% if object.detail_image6 %}
 		      	<li>
-		      		<img src="{{ object.detail_image4.url }}" >
+		      		<img src="{% version object.detail_image6 'work_thumbnail' %}" >
 		      	</li>
 		      	{% endif %}
 		      	
