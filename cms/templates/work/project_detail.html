@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="work-item">
+<div class="work-item clearfix">
     	
     	<div class="work-detail">
 	      	<h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
@@ -16,7 +16,8 @@
       	</div>
      
 	     <div class="work-image-slideshow">
-
+	     
+	     	<div class="work-image-wrapper">			  
 		     <ul class="work-image-list">
 		     	{% if object.detail_image1 %}
 		     	<li>
@@ -43,7 +44,7 @@
 		      	{% endif %}
 		      	
 		      </ul>
-		      
+	     	</div>
 		      <div class="project-meta">
 			      <div class="cat">Category:
 				      {% for group in object.group.all %}
@@ -58,6 +59,8 @@
 				
 			      <p class="more"><a href="{{ object.project_url }}">more...</a></p>
 			  </div>
+
+		      
 	      </div>
       </div>
 

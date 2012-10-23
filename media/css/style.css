@@ -393,7 +393,7 @@ h2#tag{
 #main{
 	padding: 0px 20px 50px 20px;
 	max-width: 960px;
-	margin: 40px auto 50px auto;
+	margin: 140px auto 50px auto;
 	position: relative;
 	
 }
@@ -544,16 +544,18 @@ section#about a:hover{
 
 ul.work-list{
 	padding: 0;
+	
 }
 ul li.work-item{
 	display: inline-block;
+
 	margin: 40px 0;
 	padding: 0;
 }
 
 .work-detail{
-	width: 46%;
-	float: right;
+	width: 100%;
+	xfloat: right;
 
 }
 
@@ -577,18 +579,22 @@ ul li.work-item{
 }
 
 .work-image-slideshow{
-	width: 51%;
+	width: 72.72%;
+	xwidth: 100%;
 	float: left;
+	margin-left: 10%;
+	
 }
 
 .project-meta{
-	margin-top: 230px;
+	margin-top: 74%;
 }
 
 .work-image-slideshow ul{
 	padding: 0;
 	margin: 0;
-}
+	
+	}
 
 .work-image-slideshow ul li{
 	display: inline-block;
@@ -929,9 +935,18 @@ ul.rss li{
   	color: #999;
   }
   
+  .work-detail{
+  	width: 46%;
+  	float: right;
   
+  }
   
-
+  .work-image-slideshow{
+  	width: 51%;
+  	float: left;
+  	margin-left: 0;
+  }
+  
  
   
 }
@@ -966,6 +981,8 @@ section#about li.fuel h2{
 	padding: 20px 0 0 0px;
 	width: 97%;
 }
+
+
 
 
 #content{
@@ -1092,6 +1109,11 @@ section#about li.fuel h2{
   	background:transparent url(../i/fuel_icon.png) no-repeat;
   	padding: 22px 0 0 50px;
   	width: 80%;
+  	}
+  	
+  	
+  	#main{
+  		margin-top: 40px;
   	}
   
   
