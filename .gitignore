@@ -3,10 +3,9 @@
 *.pyc
 .git
 media/uploads
-static/uploads
-settings.py
-local_settings.py
-vm_settings.py
+settings_private.py
+settings_local.py
+settings_vm.py
 *.sqlite
 logs
 blaster.html
