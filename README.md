@@ -16,7 +16,7 @@ The blog model is based loosely on [James Bennett's Coltrane app](http://www.ama
 3. Create a private settings file `settings_private.py` and place it in the root directory:
 
         import sys
-        globals().update(vars(sys.modules['settings']))
+        import os
         
         ADMINS = ()
         MANAGERS = ADMINS

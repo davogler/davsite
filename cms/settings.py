@@ -8,9 +8,6 @@ TEMPLATE_DEBUG = DEBUG
 #-------private settings outside of repository-----#
 
 from settings_private import *
-#globals().update(vars(sys.modules['settings']))
-
-
 
 #-------private settings outside of repository-----#
 
