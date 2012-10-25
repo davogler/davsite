@@ -9,6 +9,8 @@ settings_vm.py
 *.sqlite
 logs
 blaster.html
+master.html
+static_local
 
 # Numerous always-ignore extensions
 *.diff
