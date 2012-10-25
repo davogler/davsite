@@ -2,7 +2,7 @@ import os
 import sys
 import site
 
-site.addsitedir('/home/admin/envs/davsite/lib/python2.6/site-packages')
+site.addsitedir('/home/radmin/envs/dav/lib/python2.6/site-packages')
 
 sys.path.append('/srv/www/davidalanvogler.com/')
 sys.path.append('/srv/www/davidalanvogler.com/cms')
