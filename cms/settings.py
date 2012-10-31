@@ -96,7 +96,7 @@ TINYMCE_FILEBROWSER = True
 
 
 
-ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
+#ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 FILEBROWSER_DIRECTORY = 'uploads/'
 FILEBROWSER_URL_FILEBROWSER_MEDIA =  STATIC_URL + "filebrowser/"
@@ -150,21 +150,22 @@ INSTALLED_APPS = (
     'south',
     'debug_toolbar',
     'tinymce',
+    'gunicorn',
 )
 
 
-import sys
+#import sys
 
-if sys.argv[0] == 'mod_wsgi':
-    try:
-        from settings_vm import *
-    except ImportError: 
-        pass
-else:
-    try:
-        from settings_local import *
-    except ImportError:
-        pass
+#if sys.argv[0] == 'mod_wsgi':
+#    try:
+#        from settings_vm import *
+#    except ImportError: 
+#        pass
+#else:
+#    try:
+#        from settings_local import *
+#    except ImportError:
+#        pass
 
 
         
