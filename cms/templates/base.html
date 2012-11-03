@@ -39,7 +39,7 @@
 	
 	<div class="headerwrap clearfix">
 	
-		
+		{% load url from future %}
 		
 		<h2 id="tag">
 			I design products, websites, and I write about design.
@@ -52,7 +52,7 @@
 				<a href="/about/">About</a>
 				</li>
 				<li class="blog">
-				<a href="{% url coltrane.views.get_archive_index_first %}">Blog</a>
+				<a href="{% url 'coltrane.views.get_archive_index_first' %}">Blog</a>
 				</li>
 				<li class="work">
 				<a href="/work/">Work</a>
@@ -155,7 +155,7 @@
 			</li>
 			{% endfor %}
 		</ul>
-		<a href="{% url work_group_list %}">See all Portfolio Categories</a>
+		<a href="{% url 'work_group_list' %}">See all Portfolio Categories</a>
 		
 		{% for category in object.categories.all %} 
 			<a href="{{ category.get_absolute_url }}">{{ category.title }}</a> 
