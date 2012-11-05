@@ -11,6 +11,7 @@ logs
 blaster.html
 master.html
 static_local
+gunicorn_local.sh
 
 # Numerous always-ignore extensions
 *.diff
