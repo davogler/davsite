@@ -371,16 +371,16 @@ h2#tag{
 
 #nav li{
 	float: left;
-	width: 23%;
+	width: 25%;
 }
 
 #nav li:first-child{
 	
-	width: 25%;
+	width: 28%;
 }
 
 #nav li:nth-child(2){
-	width: 19.5%;
+	width: 22%;
 }
 
 #nav li a:active{
@@ -397,6 +397,10 @@ h2#tag{
 	margin: 140px auto 50px auto;
 	position: relative;
 	
+}
+
+.home #main{
+	margin-top: 60px;
 }
 
 .watbar{
