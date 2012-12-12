@@ -759,8 +759,6 @@ color: #c1c7c7;
 overflow: auto;
 width: 98%;
 overflow-y: hidden;
-
-
 	white-space: pre-wrap;
 	white-space: -moz-pre-wrap !important;
 	white-space: -pre-wrap;
@@ -789,6 +787,17 @@ p code, li code {
 	xmargin: -1px 0;
 	background-color: #ecece4;
 	
+	
+}
+
+figure{
+	display: block;
+	padding: 10px;
+	background-color: #adae9d;
+}
+
+figcaption{
+	font-style: italic;
 	
 }
 
