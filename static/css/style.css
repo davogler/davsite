@@ -266,7 +266,6 @@ h2{
 body{
 	background:#FFFAFA url(../i/dav_bg.jpg);
 	color: #525251;
-
 	 font-family: dederon-serif-web,serif;
 	line-height: 2.2em;
 	}
@@ -745,7 +744,7 @@ a.permalink:hover{
 
 pre{
 
-background: url(../i/dav_header.png) left top #4d4d4d;
+background: url(../i/codebox.png)  #4d4d4d;
 -webkit-border-radius: 0.4em;
 -moz-border-radius: 0.4em;
 -ms-border-radius: 0.4em;
