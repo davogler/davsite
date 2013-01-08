@@ -5,7 +5,7 @@
 {% block bodyclass %}{{ block.super }} detail{% endblock %}
 
 {% block content %}
-	<article>
+	<article class="clearfix">
 	<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2> 
 
 	<p class="date"><a href="{{ object.get_absolute_url }}" class="permalink" title="Permalink"> </a> Published on {{ object.pub_date|date:"F j, Y" }}</p>  
