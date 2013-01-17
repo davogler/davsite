@@ -72,26 +72,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
-TINYMCE_JS_URL = os.path.join(STATIC_URL, 'js/tiny_mce/tiny_mce.js')
-TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, 'js/tiny_mce')
-TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "table,paste,searchreplace,advimage",
-    'theme': "advanced",
-    'relative_urls': False,
-    'cleanup_on_startup': True,
-    'auto_cleanup_word' : True,
-    'custom_undo_redo_levels': 10,
-    'paste_auto_cleanup_on_paste' : True,
-    'extended_valid_elements' : "a[name|href|target=_blank|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
-     'theme_advanced_buttons1' : "bold,italic,underline,|,justifyleft,justifycenter,justifyright,justifyfull,|,link,unlink,image,styleselect,formatselect,removeformat,cleanup,|,bullist,numlist,outdent,indent,hr,blockquote,replace,|,code",
-      
-     }
-TINYMCE_SPELLCHECKER = False
-TINYMCE_COMPRESSOR = False
-TINYMCE_FILEBROWSER = True
-
-
-
 #ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 FILEBROWSER_DIRECTORY = 'uploads/'
@@ -145,7 +125,6 @@ INSTALLED_APPS = (
     'work',
     'south',
     #'debug_toolbar',
-    'tinymce',
     'gunicorn',
 )
 
