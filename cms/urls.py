@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import *
 from filebrowser.sites import site
 from django.conf import settings
-from coltrane.models import Entry
-from coltrane.feeds import CategoryFeed, LatestEntriesFeed, LatestLinksFeed
+from blog.models import Entry
+from blog.feeds import CategoryFeed, LatestEntriesFeed, LatestLinksFeed
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 feeds = { 'entries': LatestEntriesFeed,
@@ -17,15 +17,15 @@ featured_entry_info_dict = {'queryset':Entry.objects.filter(featured=True), 'dat
 urlpatterns = patterns('',
     # Example:
     # (r'^cms/', include('cms.foo.urls')),
-    (r'^$', 'coltrane.views.get_featured', ),
+    (r'^$', 'blog.views.get_featured', ),
     (r'^admin/filebrowser/', include(site.urls)),
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/', include(admin.site.urls)),
 	(r'^search/$', 'cms.search.views.search'), 
-	(r'^blog/categories/', include('coltrane.urls.categories')),
-	(r'^blog/links/', include('coltrane.urls.links')),
+	(r'^blog/categories/', include('blog.urls.categories')),
+	(r'^blog/links/', include('blog.urls.links')),
 	
-	(r'^blog/', include('coltrane.urls.entries')),
+	(r'^blog/', include('blog.urls.entries')),
 	(r'^comments/', include('django.contrib.comments.urls')),
 	(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', { 'feed_dict': feeds }),
 	(r'^work/', include('work.urls')),

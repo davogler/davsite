@@ -9,13 +9,13 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         
         # Adding field 'Entry.thumb'
-        db.add_column('coltrane_entry', 'thumb', self.gf('filebrowser.fields.FileBrowseField')(max_length=200, null=True, blank=True), keep_default=False)
+        db.add_column('blog_entry', 'thumb', self.gf('filebrowser.fields.FileBrowseField')(max_length=200, null=True, blank=True), keep_default=False)
 
 
     def backwards(self, orm):
         
         # Deleting field 'Entry.thumb'
-        db.delete_column('coltrane_entry', 'thumb')
+        db.delete_column('blog_entry', 'thumb')
 
 
     models = {
@@ -48,19 +48,19 @@ class Migration(SchemaMigration):
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         },
-        'coltrane.category': {
+        'blog.category': {
             'Meta': {'ordering': "['title']", 'object_name': 'Category'},
             'description': ('django.db.models.fields.TextField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '250'})
         },
-        'coltrane.entry': {
+        'blog.entry': {
             'Meta': {'ordering': "['-pub_date']", 'object_name': 'Entry'},
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
             'body': ('django.db.models.fields.TextField', [], {}),
             'body_html': ('django.db.models.fields.TextField', [], {}),
-            'categories': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['coltrane.Category']", 'symmetrical': 'False'}),
+            'categories': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['blog.Category']", 'symmetrical': 'False'}),
             'enable_comments': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'excerpt': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'excerpt_html': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
@@ -73,7 +73,7 @@ class Migration(SchemaMigration):
             'thumb': ('filebrowser.fields.FileBrowseField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '250'})
         },
-        'coltrane.link': {
+        'blog.link': {
             'Meta': {'ordering': "['-pub_date']", 'object_name': 'Link'},
             'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'description_html': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
@@ -97,4 +97,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['coltrane']
+    complete_apps = ['blog']

@@ -120,7 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'django.contrib.markup',
     'cms.search',
-    'coltrane',
+    'blog',
     'disqus',
     'work',
     'south',
