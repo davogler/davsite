@@ -1,11 +1,12 @@
-{% extends "coltrane/base_links.html" %}
+{% extends "blog/base_categories.html" %}
 
-{% block title %}{{ block.super }} | {{ tag.name }} Links{% endblock %}
+{% block title %}{{ block.super }} | {{ category.title }}{% endblock %}
 
 
 {% block content %}
-    <h2>Links tagged with '{{ tag.name }}'</h2>
+    <h2>{{ category.title }}</h2>
     {% for object in object_list %}
+    
       <p><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></p>
     {% endfor %}
 {% endblock %}

@@ -9,16 +9,16 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         
         # Adding model 'Category'
-        db.create_table('coltrane_category', (
+        db.create_table('blog_category', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=250)),
             ('slug', self.gf('django.db.models.fields.SlugField')(unique=True, max_length=50, db_index=True)),
             ('description', self.gf('django.db.models.fields.TextField')()),
         ))
-        db.send_create_signal('coltrane', ['Category'])
+        db.send_create_signal('blog', ['Category'])
 
         # Adding model 'Entry'
-        db.create_table('coltrane_entry', (
+        db.create_table('blog_entry', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=250)),
             ('excerpt', self.gf('django.db.models.fields.TextField')(blank=True)),
@@ -33,18 +33,18 @@ class Migration(SchemaMigration):
             ('status', self.gf('django.db.models.fields.IntegerField')(default=1)),
             ('tags', self.gf('tagging.fields.TagField')()),
         ))
-        db.send_create_signal('coltrane', ['Entry'])
+        db.send_create_signal('blog', ['Entry'])
 
         # Adding M2M table for field categories on 'Entry'
-        db.create_table('coltrane_entry_categories', (
+        db.create_table('blog_entry_categories', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('entry', models.ForeignKey(orm['coltrane.entry'], null=False)),
-            ('category', models.ForeignKey(orm['coltrane.category'], null=False))
+            ('entry', models.ForeignKey(orm['blog.entry'], null=False)),
+            ('category', models.ForeignKey(orm['blog.category'], null=False))
         ))
-        db.create_unique('coltrane_entry_categories', ['entry_id', 'category_id'])
+        db.create_unique('blog_entry_categories', ['entry_id', 'category_id'])
 
         # Adding model 'Link'
-        db.create_table('coltrane_link', (
+        db.create_table('blog_link', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=250)),
             ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
@@ -58,22 +58,22 @@ class Migration(SchemaMigration):
             ('via_name', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
             ('via_url', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
         ))
-        db.send_create_signal('coltrane', ['Link'])
+        db.send_create_signal('blog', ['Link'])
 
 
     def backwards(self, orm):
         
         # Deleting model 'Category'
-        db.delete_table('coltrane_category')
+        db.delete_table('blog_category')
 
         # Deleting model 'Entry'
-        db.delete_table('coltrane_entry')
+        db.delete_table('blog_entry')
 
         # Removing M2M table for field categories on 'Entry'
-        db.delete_table('coltrane_entry_categories')
+        db.delete_table('blog_entry_categories')
 
         # Deleting model 'Link'
-        db.delete_table('coltrane_link')
+        db.delete_table('blog_link')
 
 
     models = {
@@ -106,19 +106,19 @@ class Migration(SchemaMigration):
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         },
-        'coltrane.category': {
+        'blog.category': {
             'Meta': {'ordering': "['title']", 'object_name': 'Category'},
             'description': ('django.db.models.fields.TextField', [], {}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50', 'db_index': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '250'})
         },
-        'coltrane.entry': {
+        'blog.entry': {
             'Meta': {'ordering': "['-pub_date']", 'object_name': 'Entry'},
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']"}),
             'body': ('django.db.models.fields.TextField', [], {}),
             'body_html': ('django.db.models.fields.TextField', [], {}),
-            'categories': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['coltrane.Category']", 'symmetrical': 'False'}),
+            'categories': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['blog.Category']", 'symmetrical': 'False'}),
             'enable_comments': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'excerpt': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'excerpt_html': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
@@ -130,7 +130,7 @@ class Migration(SchemaMigration):
             'tags': ('tagging.fields.TagField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '250'})
         },
-        'coltrane.link': {
+        'blog.link': {
             'Meta': {'ordering': "['-pub_date']", 'object_name': 'Link'},
             'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'description_html': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
@@ -154,4 +154,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['coltrane']
+    complete_apps = ['blog']

@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render_to_response
-from coltrane.models import Category
+from blog.models import Category
 from django.views.generic.list_detail import object_list
 
 def category_detail(request, slug): 
@@ -10,7 +10,7 @@ from django.core.paginator import Paginator
 from django.views.generic.list_detail import object_list
 from django.http import Http404
 from django.shortcuts import get_list_or_404
-from coltrane.models import Entry
+from blog.models import Entry
 
 num_in_page = 4
 
@@ -29,7 +29,7 @@ def get_archive_index(request, page):
  
     if int(page) in paginator.page_range:
     	listy = paginator.page(page)
-    	return object_list(request, queryset, paginate_by=num_in_page, page=int(page), extra_context={ 'listy': listy}, template_name='coltrane/entry_archive_paged.html')
+    	return object_list(request, queryset, paginate_by=num_in_page, page=int(page), extra_context={ 'listy': listy}, template_name='blog/entry_archive_paged.html')
     # send a 404 error that page is not found.
     raise Http404
 
@@ -39,7 +39,7 @@ def get_archive_index_first(request):
     queryset = Entry.live.all()
     paginator = Paginator(queryset, num_in_page)
     listy = paginator.page(1)
-    return object_list(request, queryset, paginate_by=num_in_page, page=int(1), extra_context={ 'listy': listy}, template_name='coltrane/entry_archive_paged.html')
+    return object_list(request, queryset, paginate_by=num_in_page, page=int(1), extra_context={ 'listy': listy}, template_name='blog/entry_archive_paged.html')
     
 from django.conf import settings
 from django.shortcuts import render_to_response

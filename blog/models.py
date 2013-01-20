@@ -16,7 +16,7 @@ class Category(models.Model):
 		verbose_name_plural = "Categories"
 	
 	def live_entry_set(self):
-		from coltrane.models import Entry
+		from blog.models import Entry
 		return self.entry_set.filter(status=Entry.LIVE_STATUS)
 	
 	
@@ -24,7 +24,7 @@ class Category(models.Model):
 		return self.title
 		
 	def get_absolute_url(self):
-		return ('coltrane_category_detail', (), { 'slug': self.slug })
+		return ('blog_category_detail', (), { 'slug': self.slug })
 		
 	get_absolute_url = models.permalink(get_absolute_url)
 		
@@ -76,7 +76,7 @@ class Entry(models.Model):
 		super(Entry, self).save(force_insert, force_update)
 		
 	def get_absolute_url(self):
-		return ('coltrane_entry_detail', (), { 'year': self.pub_date.strftime('%Y'), 'month': self.pub_date.strftime('%b').lower(), 'day': self.pub_date.strftime('%d'), 'slug': self.slug })
+		return ('blog_entry_detail', (), { 'year': self.pub_date.strftime('%Y'), 'month': self.pub_date.strftime('%b').lower(), 'day': self.pub_date.strftime('%d'), 'slug': self.slug })
 	
 	get_absolute_url = models.permalink(get_absolute_url)
 
@@ -107,7 +107,7 @@ class Link(models.Model):
 		super(Link, self).save()
 		
 	def get_absolute_url(self):
-		return ('coltrane_link_detail', (), { 'year': self.pub_date.strftime('%Y'),'month': self.pub_date.strftime('%b').lower(), 'day': self.pub_date.strftime('%d'), 'slug': self.slug })
+		return ('blog_link_detail', (), { 'year': self.pub_date.strftime('%Y'),'month': self.pub_date.strftime('%b').lower(), 'day': self.pub_date.strftime('%d'), 'slug': self.slug })
 	
 	get_absolute_url = models.permalink(get_absolute_url)
 

@@ -1,7 +1,7 @@
 from django.template import Library, Node
 from django import template
 from django.db.models import get_model
-from coltrane.models import Category
+from blog.models import Category
      
 register = Library()
 register = template.Library()
@@ -30,4 +30,4 @@ def nav_categorylist():
 	categories = Category.objects.all()
 	return {'categories': categories}
 	
-register.inclusion_tag('coltrane/category_nav_list.html')(nav_categorylist)
+register.inclusion_tag('blog/category_nav_list.html')(nav_categorylist)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from coltrane.models import Category, Entry, Link
+from blog.models import Category, Entry, Link
 
 class CategoryAdmin(admin.ModelAdmin): 
 	prepopulated_fields = { 'slug': ['title'] }

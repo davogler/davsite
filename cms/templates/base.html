@@ -52,7 +52,7 @@
 				<a href="/about/">About</a>
 				</li>
 				<li class="blog">
-				<a href="{% url 'coltrane.views.get_archive_index_first' %}">Blog</a>
+				<a href="{% url 'blog.views.get_archive_index_first' %}">Blog</a>
 				</li>
 				<li class="work">
 				<a href="/work/">Work</a>
@@ -86,7 +86,7 @@
 	
 	<aside id="sidebar"> 
 	
-	{% load coltrane_tags %}
+	{% load blog_tags %}
 	
 	
 
@@ -126,7 +126,7 @@
 		
 		<h2>Latest Entries</h2>
 		<ul>
-			{% get_latest coltrane.entry 5 as latest_entries  %}
+			{% get_latest blog.entry 5 as latest_entries  %}
 			{% for entry in latest_entries %}
 			<li>
 				<a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
