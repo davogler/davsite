@@ -93,12 +93,14 @@ FILEBROWSER_SELECT_FORMATS = {
     'media': ['Video','Audio'],
 }
 
+from pil_versions import topcrop320
+
 FILEBROWSER_VERSIONS = {
     'admin_thumbnail': {'verbose_name': 'Admin Thumbnail(60x60)', 'width': 60, 'height': 60, 'opts': 'crop'},
     'thumbnail': {'verbose_name': 'Thumbnail(60x60)', 'width': 60, 'height': 60, 'opts': 'crop'},
     'small': {'verbose_name': 'Small(140x-)', 'width': 140, 'height': '', 'opts': ''},
     'medium': {'verbose_name': 'Medium(320x-)', 'width': 320, 'height': '', 'opts': ''},
-    'work_thumbnail': {'verbose_name': 'Work Thumbnail(320x250)', 'width': 320, 'height': 250, 'opts': 'crop'},
+    'work_thumbnail': {'verbose_name': 'Work Thumbnail(320x250)', 'width': 320, 'height': '', 'opts': 'crop', 'methods': [topcrop320]},
     'big': {'verbose_name': 'Big(460x-)', 'width': 460, 'height': '', 'opts': ''},
     'large': {'verbose_name': 'Large(680x-)', 'width': 680, 'height': '', 'opts': ''},
 }
