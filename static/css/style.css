@@ -788,7 +788,6 @@ p code, li code {
 }
 
 figure, article img{
-<<<<<<< HEAD
 	display: block;
 	padding: 8px;
 	background-color: #b6b7a8;
@@ -802,21 +801,6 @@ img.blurbthumb{
 	float: left;
 	width: inherit;
 	display: block;
-=======
-	display: block;
-	padding: 8px;
-	background-color: #b6b7a8;
-}
-
-article img{
-	width: 100%;
-}
-
-img.blurbthumb{
-	float: left;
-	width: inherit;
-	display: block;
->>>>>>> develop
 	margin: 8px 8px 8px 0;
 	xborder: 1px solid #525251;
 }
