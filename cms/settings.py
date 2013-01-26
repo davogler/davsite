@@ -1,7 +1,7 @@
 import os.path
 
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 
@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.doc.XViewMiddleware',
 )
 
@@ -126,23 +126,9 @@ INSTALLED_APPS = (
     'disqus',
     'work',
     'south',
-    'debug_toolbar',
+    #'debug_toolbar',
     'gunicorn',
 )
-
-
-#import sys
-
-#if sys.argv[0] == 'mod_wsgi':
-#    try:
-#        from settings_vm import *
-#    except ImportError: 
-#        pass
-#else:
-#    try:
-#        from settings_local import *
-#    except ImportError:
-#        pass
 
 
         
