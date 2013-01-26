@@ -1,6 +1,7 @@
 /* @override http://127.0.0.1:8000/media/css/style.css
 	http://192.168.0.198:8000/media/css/style.css
-	http://127.0.0.1:8000/static/css/style.css */
+	http://127.0.0.1:8000/static/css/style.css
+	http://dev.davidalanvogler.com/static/css/style.css */
 
 /* 
  * HTML5 ✰ Boilerplate
@@ -552,7 +553,8 @@ ul.work-list{
 }
 ul li.work-item{
 	xdisplay: inline-block;
-
+	list-style-image: none;
+	list-style: none;
 	margin: 40px 0;
 	padding: 0;
 }
@@ -719,12 +721,7 @@ h2.goth{
 	background: transparent url('../i/finger_pointin.png') no-repeat right -26px;
 }
 
-img.blurbthumb{
-	float: left;
-	display: block;
-	margin: 8px 8px 8px 0;
-	border: 1px solid #525251;
-}
+
 
 p.date{
 	font-style: italic;
@@ -790,10 +787,26 @@ p code, li code {
 	
 }
 
-figure{
+figure, article img{
 	display: block;
-	padding: 10px;
-	background-color: #adae9d;
+	padding: 8px;
+	background-color: #b6b7a8;
+}
+
+article img{
+	width: 100%;
+}
+
+img.blurbthumb{
+	float: left;
+	width: inherit;
+	display: block;
+	margin: 8px 8px 8px 0;
+	xborder: 1px solid #525251;
+}
+
+article img.blurbthumb{
+	
 }
 
 figcaption{
@@ -805,6 +818,7 @@ figcaption{
 footer.article{
 	font-style: italic;
 	color: #8d8d8d;
+	margin: 15px 0 0 0;
 }
 
 article footer a{
