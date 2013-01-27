@@ -404,7 +404,7 @@ h2#tag{
 }
 
 .watbar{
-	margin-top: 135px;
+	margin-top: 115px;
 	width: 100%;
 	text-align: center;
 	-moz-box-shadow: 0 3px #e4e4de;
@@ -441,7 +441,7 @@ section#about{
 	border-bottom: 1px solid #ededed;
 	xborder-top: 1px solid #ededed;
 	box-shadow: inset 0px 0px 6px #4c483d;
-	padding: 0px 50px 20px 50px;
+	padding: 0px 50px 0px 50px;
 }
 
 section#about::after{
@@ -572,7 +572,7 @@ ul li.work-item{
 .work-detail h3{
 	margin: 0;
 	font-size: 1.5em;
-	line-height: 1em;
+	line-height: 1.3em;
 }
 
 .work-detail h3 a{
@@ -593,7 +593,7 @@ ul li.work-item{
 }
 
 .project-meta{
-	margin-top: 74%;
+	margin-top: 79%;
 }
 
 .work-image-slideshow ul{
@@ -610,6 +610,13 @@ ul li.work-item{
 .work-image-slideshow img{
 	width: 100%;
 	border: 1px solid #525251;
+}
+
+.work-image-list img{
+	display: block;
+	padding: 3%;
+	background-color: #b6b7a8;
+	border: none;
 }
 
 .cat{
@@ -979,7 +986,7 @@ ul.rss li{
 
 #taglist ul.proj-thumbs li{
 	float: left;
-	margin: 0 15px 15px 0;
+	margin: 0 8%  8% 0;
 }
 
 
@@ -1013,7 +1020,7 @@ ul.rss li{
   }
   
   .work-detail{
-  	width: 46%;
+  	width: 45%;
   	float: right;
   
   }
@@ -1023,6 +1030,8 @@ ul.rss li{
   	float: left;
   	margin-left: 0;
   }
+  
+  
   
  
   

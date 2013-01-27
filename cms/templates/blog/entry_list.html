@@ -4,7 +4,7 @@
 
 
 {% block content %}
-    <h2>{{ category.title }}</h2>
+    <h2 class="goth">Blog: {{ category.title }}</h2>
     {% for object in object_list %}
     
       <p><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></p>

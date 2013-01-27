@@ -5,7 +5,8 @@
 {% block content %}
     <h2 class="goth">Portfolio Categories</h2>
     {% for object in object_list %}
-      <p>ss<a href="{{ object.get_absolute_url }}">{{ object.title }}</a></p>
+      <p><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></p>
     {% endfor %}
+      <p><a href="/work/">Everything</a></p>
 {% endblock %}
 
