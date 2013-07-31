@@ -22,15 +22,15 @@ MEDIA_ROOT = os.path.join(ROOT_PATH, '../media')
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
-    os.path.join(ROOT_PATH, '../static_local'),
+    os.path.join(ROOT_PATH, './static'),
 )
 
 STATIC_URL = (
-	"/static/"
+	"/assets/"
 )
 
 STATIC_ROOT = (
-	os.path.join(ROOT_PATH, '../static')
+	os.path.join(ROOT_PATH, '../assets')
 )
 
 

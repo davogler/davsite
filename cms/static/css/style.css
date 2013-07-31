@@ -1,0 +1,1253 @@
+/* @override http://127.0.0.1:8000/media/css/style.css
+	http://192.168.0.198:8000/media/css/style.css
+	http://127.0.0.1:8000/static/css/style.css
+	http://dev.davidalanvogler.com/static/css/style.css */
+
+/* 
+ * HTML5 ✰ Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling. 
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ * 
+ * ==|== normalize ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection { background: #e15e40; color: #fff; text-shadow: none; }
+::selection { background: #e15e40; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 
+ * Remove inner padding and border in FF3/4: h5bp.com/l 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== primary styles =====================================================
+   Author: 
+   ========================================================================== */
+
+a,a:link,a:visited{
+	color: #958760;
+}
+
+a:hover, a:focus, 
+#nav li a:hover{
+	color: #e15e40;
+	-webkit-transition: color .15s linear;
+	-moz-transition:    color .15s linear;
+	-o-transition:      color .15s linear;
+}
+
+#nav li a:active,
+.flatpage.about #nav li.about a,
+.entries #nav li.blog a,
+.categories #nav li.blog a,
+.projects #nav li.work a,
+.groups #nav li.work a,
+.flatpage.contact-me #nav li.contact a{
+	color: #e15e40;
+}
+
+h1,h2,h3{
+	font-family: dederon-serif-web,serif;
+	font-weight: 500;
+	margin: 20px 0 5px 0;
+	}
+
+h1{
+	font-size: 2em;
+}
+h2{
+	font-size: 2em;
+}
+
+#content h2 a{
+	text-decoration: none;
+	
+}
+
+.subheading{
+	text-transform: lowercase;
+	font-style: italic;
+	color: #999;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background:#FFFAFA url(../i/dav_bg.jpg);
+	color: #525251;
+	 font-family: dederon-serif-web,serif;
+	line-height: 2.2em;
+	}
+	
+.page{
+	
+}
+	
+header#banner{
+	margin-top: 0;
+	background: #525251 url(../i/dav_header.png) 0 bottom;
+	bottom: 0px;
+	height: 140px;
+	margin-bottom: -70px;
+
+}
+
+h1#logo{
+	margin: 0;
+	width: 100%;
+}
+
+
+h1#logo span{
+	color: #3f3e3e;
+	
+	font-family: league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;	
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0px #de5b3d, 4px 4px 0 #c13f26;
+	display: block;
+	margin: 0px;
+	padding: 1.4% 1% 2% 17px;
+	border-bottom: 1px solid #333;
+	box-shadow: 0px 3px 5px #444;
+	
+}
+
+h1#logo a:hover,
+h1#logo span:hover,
+h1#logo span:focus{
+	color: #d1dede;
+	-webkit-transition: color .15s linear;
+}
+
+
+
+h1#logo span:active
+{
+	text-shadow:none;
+	padding: 1.1% .9% 1.9% 1.1%;
+}
+
+
+h1#logo a{
+	
+	text-decoration: none;
+}
+
+.logowrap{
+	background-color: #de5b3d;
+}
+
+.headerwrap{
+	padding: 0px 20px 0 20px;
+	color: #e1e1de;
+	max-width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+
+h2#tag{
+	position: absolute;
+	width: 92%;
+	float: left;
+	margin-top: 115px;
+	margin-left: 0px;
+	font-size: 1.1em;
+	font-style: italic;
+	color: #999;
+}
+
+#nav{
+	position: absolute;
+	
+	width: 60%;
+	margin-top: 35px;
+	font-size: .8em;
+}
+
+#nav a, .footerwrap h2{
+	color: #e1e1de;
+	text-decoration: none;
+	font-family: league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;
+	
+	font-size: 2.5em;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0px #525251, 4px 4px 0 #3B3A3E;
+}
+
+#nav li{
+	float: left;
+	width: 25%;
+}
+
+#nav li:first-child{
+	
+	width: 28%;
+}
+
+#nav li:nth-child(2){
+	width: 22%;
+}
+
+#nav li a:active{
+	
+	margin: 1px;
+	text-shadow: none;
+	
+
+}
+
+#main{
+	padding: 0px 20px 50px 20px;
+	max-width: 960px;
+	margin: 140px auto 50px auto;
+	position: relative;
+	
+}
+
+.home #main{
+	margin-top: 60px;
+}
+
+.watbar{
+	margin-top: 115px;
+	width: 100%;
+	text-align: center;
+	-moz-box-shadow: 0 3px #e4e4de;
+	-webkit-box-shadow: 0 3px #e4e4de;
+	-o-box-shadow: #e4e4de 0 3px;
+	box-shadow: 0 1px #e4e4de;
+}
+
+.watbar a{
+	padding: 2px 5px;
+	font-family: sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	background-color: rgba(0, 0, 0, 0.07);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.07),inset 0 -1px 0 rgba(0, 0, 0, 0.07),inset 0 1px 3px rgba(0, 0, 0, 0.1),0 1px 0 rgba(255, 255, 255, 0.4);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.07),inset 0 -1px 0 rgba(0,0,0,0.07),inset 0 1px 3px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.4);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.07),inset 0 -1px 0 rgba(0, 0, 0, 0.07),inset 0 1px 3px rgba(0, 0, 0, 0.1),0 1px 0 rgba(255, 255, 255, 0.4);
+	border-radius: 2px;
+}
+
+.watbar a:hover{
+	background-color: rgba(0, 0, 0, 0.19);
+}
+
+.dotbot{
+	border-bottom: 1px dotted rgba(35, 33, 33, 0.27);
+	
+}
+
+section#about{
+	background:#FFFAFA url(../i/dav_about_bg.jpg);
+	color: #525251;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #ededed;
+	xborder-top: 1px solid #ededed;
+	box-shadow: inset 0px 0px 6px #4c483d;
+	padding: 0px 50px 0px 50px;
+}
+
+section#about::after{
+	border-top: 1px solid #ededed;
+}
+
+section#about li{
+	
+}
+
+
+section#about li.kek h2{
+	height: 40px;
+	
+	font-family: league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;
+	font-size: 2.4em;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	border-bottom: 1px solid #525251;
+	
+	background:transparent url(../i/kek_icon.png) no-repeat;
+	padding: 22px 0 0 59px;
+	width: 88%;
+	}
+	
+section#about li.spark h2{
+	height: 40px;
+	display: block;
+	overflow: visible;
+	
+	border-bottom: 1px solid #525251;
+	
+	font-family: league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;
+	font-size: 2.4em;
+	xfont-size: 222%;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	
+	background:transparent url(../i/sparkhouse_icon.png) 0 0px no-repeat;
+	width: 80%;
+	padding: 22px 0 0 55px;
+	}
+	
+section#about li.fuel h2{
+
+	
+	height: 40px;
+	border-bottom: 1px solid #525251;
+	
+	font-family: league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;
+	font-size: 2.4em;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	/text-shadow: 2px 2px 0px #525251, 4px 4px 0 #3B3A3E;
+	background:transparent url(../i/fuel_icon.png) no-repeat;
+	padding: 22px 0 0 50px;
+	width: 80%;
+	
+	}
+
+.aboutwrap{
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+section#about ul{
+	margin: 0;
+	padding: 0;
+}
+
+section#about ul li{
+	width: 87%;
+	xfloat: left;
+	display: block;
+	margin: 0 1% 2% 0;
+	padding: 0 5% 0 0;
+	
+}
+
+section#about a{
+	color: #ededed;
+	
+}
+
+
+
+section#about a:hover{
+	color: #525251;
+	-webkit-transition: color .15s linear;
+	text-shadow: #e15e40 0 0 8px;
+
+}
+
+#content{
+	width: 100%;
+	float: left;
+}
+
+#sidebar{
+	
+	width: 100%;
+	float: left;
+}
+
+
+ul.work-list{
+	padding: 0;
+	
+}
+ul li.work-item{
+	xdisplay: inline-block;
+	list-style-image: none;
+	list-style: none;
+	margin: 40px 0;
+	padding: 0;
+}
+
+.work-detail{
+	width: 100%;
+	xfloat: right;
+
+}
+
+.work-detail p{
+	font-size: .9em;
+}
+
+.work-detail h3{
+	margin: 0;
+	font-size: 1.5em;
+	line-height: 1.3em;
+}
+
+.work-detail h3 a{
+	text-decoration: none;
+}
+
+.work-detail p.more{
+	float: right;
+	margin: -5px 0 0 0;
+}
+
+.work-image-slideshow{
+	width: 72.72%;
+	xwidth: 100%;
+	float: left;
+	margin-left: 10%;
+	
+}
+
+.project-meta{
+	margin-top: 79%;
+}
+
+.work-image-slideshow ul{
+	padding: 0;
+	margin: 0;
+	
+	}
+
+.work-image-slideshow ul li{
+	display: inline-block;
+	width: 100%;
+}
+
+.work-image-slideshow img{
+	width: 100%;
+	border: 1px solid #525251;
+}
+
+.work-image-list img{
+	display: block;
+	padding: 3%;
+	background-color: #b6b7a8;
+	border: none;
+}
+
+.cat{
+	width: 70%;
+	display: block;
+	float: left;
+	margin: 15px 0 0 0;
+		text-transform: lowercase;
+	font-style: italic;
+	color: #999;
+}
+
+ul.button-list{
+	width: 60px;
+	float: right;
+	margin: 29px 0 0 0;
+}
+
+ul.button-list li{
+	float: left;
+	display: block;
+	width: 16px;
+	margin: 0 5px;
+}
+
+a.next{
+	display: block;
+	background: transparent url(../i/bip.png) -16px 0px no-repeat;
+	height: 20px;
+	text-indent: -999px;
+	overflow: hidden;
+	width: 16px;
+}
+
+a.prev{
+	display: block;
+	background: transparent url(../i/bip.png) 0px 0px no-repeat;
+	height: 20px;
+	text-indent: -999px;
+	overflow: hidden;
+	width: 16px;
+}
+
+a.next:hover{
+	background: transparent url(../i/bip.png) -16px -20px no-repeat;
+}
+
+a.prev:hover{
+	background: transparent url(../i/bip.png) 0px -20px no-repeat;
+}
+
+
+
+/* Article detail styles */
+
+#content article,
+li.work-item{
+
+	margin: 40px 0;
+	border-bottom: 1px dotted rgba(35, 33, 33, 0.27);
+	-moz-box-shadow: 0 1px #e4e4de;
+	-webkit-box-shadow: 0 1px #e4e4de;
+	-o-box-shadow: #e4e4de 0 1px;
+	box-shadow: 0 1px #e4e4de;
+	
+	}
+	
+.entries.detail #content article{
+	border-bottom: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+h2.goth{
+	text-decoration: none;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0px #CAC9B5, 4px 4px 0 #adae9d;
+	border-bottom: 1px solid #525251;
+	padding: 0 0 9px 0;
+	-moz-box-shadow: 0 1px #f1f1ed;
+	-webkit-box-shadow: 0 1px #f1f1ed;
+	-o-box-shadow: #f1f1ed 0 1px;
+	box-shadow: 0 1px #f1f1ed;
+	font: 2.5em league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;
+}
+
+.moar{
+	margin: 50px 0 0 0;
+	xborder-top: 1px solid #525251;
+	padding: 9px 0 9px 0;
+}
+
+.moar a{
+	text-decoration: none;
+	font-family: league-gothic, "League Gothic", "HelveticaNeue Condensed", "Trade Gothic", "Arial Narrow", "Helvetica", "Arial", sans-serif;
+	font-size: 2.5em;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0px #CAC9B5, 4px 4px 0 #adae9d;
+    background: transparent url('../i/finger_pointin.png') no-repeat right 8px;
+    padding: 0 50px 0 0;
+}
+
+.moar a:hover,
+.moar a:focus{
+	background: transparent url('../i/finger_pointin.png') no-repeat right -26px;
+}
+
+
+
+p.date{
+	font-style: italic;
+	color: #999;
+}
+
+a.permalink{
+	display: inline-block;
+	width: 20px;
+	height: 13px;
+	background: transparent url('../i/permalink.png') no-repeat left 3px;
+}
+
+a.permalink:hover{
+	background: transparent url('../i/permalink.png') no-repeat left -14px;
+}
+
+pre{
+
+background: url(../i/codebox.png)  #4d4d4d;
+-webkit-border-radius: 0.4em;
+-moz-border-radius: 0.4em;
+-ms-border-radius: 0.4em;
+-o-border-radius: 0.4em;
+border-radius: 0.4em;
+
+line-height: 1.45em;
+font-size: 13px;
+margin-bottom: 2.1em;
+padding: .8em 1em;
+color: #c1c7c7;
+overflow: auto;
+width: 98%;
+overflow-y: hidden;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap !important;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	overflow-x: hidden;
+	
+}
+
+.mono, pre, code, tt, p code, li code {
+font-family: inconsolata,monospace;
+}
+
+p code, li code {
+	display: inline-block;
+	white-space: no-wrap;
+	line-height: 1.5em;
+	color: #555;
+	border: 1px solid #b3b2b2;
+	-webkit-border-radius: 0.4em;
+	-moz-border-radius: 0.4em;
+	-ms-border-radius: 0.4em;
+	-o-border-radius: 0.4em;
+	border-radius: 0.4em;
+	padding: 0 .3em;
+	xmargin: -1px 0;
+	background-color: #ecece4;
+	
+	
+}
+
+figure, article img{
+	display: block;
+	padding: 8px;
+	background-color: #b6b7a8;
+}
+
+article img{
+	width: 100%;
+}
+
+img.blurbthumb{
+	float: left;
+	width: inherit;
+	display: block;
+	margin: 8px 8px 8px 0;
+	xborder: 1px solid #525251;
+}
+
+article img.blurbthumb{
+	
+}
+
+figcaption{
+	font-style: italic;
+	
+}
+
+
+footer.article{
+	font-style: italic;
+	color: #8d8d8d;
+	margin: 15px 0 0 0;
+}
+
+article footer a{
+	text-decoration: none;
+	padding: 3px 5px;
+	background-color: rgba(0, 0, 0, 0.07);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.07),inset 0 -1px 0 rgba(0, 0, 0, 0.07),inset 0 1px 3px rgba(0, 0, 0, 0.1),0 1px 0 rgba(255, 255, 255, 0.4);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.07),inset 0 -1px 0 rgba(0,0,0,0.07),inset 0 1px 3px rgba(0,0,0,0.1),0 1px 0 rgba(255,255,255,0.4);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.07),inset 0 -1px 0 rgba(0, 0, 0, 0.07),inset 0 1px 3px rgba(0, 0, 0, 0.1),0 1px 0 rgba(255, 255, 255, 0.4);
+	border-radius: 2px;
+}
+
+ article footer a:hover{
+	background-color: rgba(0, 0, 0, 0.19);
+}
+
+.nocomment{
+	font-style: italic;
+	color: #8d8d8d;
+}
+
+.datelist{
+	list-style: none;
+	padding: 0;
+}
+
+.datelist a{
+	text-decoration: none;
+}
+
+
+ul.catnav{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.catnav li{
+	background-image: url(../i/folder-icon.gif);
+	background-repeat: no-repeat;
+	background-position: 0 .7em;
+	padding-left: 1.5em;
+	display: block;
+}
+
+ul.rss{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.rss li{
+	background-image: url(../i/rss-badge.png);
+	background-repeat: no-repeat;
+	background-position: 0 .7em;
+	padding-left: 1.5em;
+	display: block;
+}
+
+#footer{
+	background:#525251 url(../i/dav_header.png);
+	background: url(../i/footer-edge.png) 0 0 repeat-x, url(../i/dav_footer.png); 0px 0px repeat #525251;
+
+}
+
+
+
+.footerwrap{
+	padding: 20px 50px;
+	color: #e1e1de;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.footerwrap ul{
+	padding: 0 0 0 5px;
+}
+
+.footerwrap ul li{
+	list-style-image: none;
+	list-style-type: none;
+}
+
+.footerwrap h2{
+	border-bottom: 1px solid #e1e1de;
+	padding: 0 0 9px 0;
+}
+
+#recent{
+	width: 100%;
+	float: left;
+	
+}
+#taglist{
+	width: 100%;
+	float: left;
+	margin: 20px 0 0 0;
+}
+
+#elsewhere{
+	width: 100%;
+	float: left;
+	margin: 20px 0 0 0;
+}
+
+#elsewhere ul li a{
+	padding: 0 0 10px 30px;
+}
+
+
+
+#elsewhere ul li.twit a{
+	background: transparent url('../i/social_sprites.png') no-repeat -0px  0px;	
+}
+#elsewhere ul li.twit a:hover,
+#elsewhere ul li.twit a:focus{
+	background: transparent url('../i/social_sprites_hi.png') no-repeat -0px  0px;
+	
+}
+
+#elsewhere ul li.lion a{
+	background: transparent url('../i/social_sprites.png') no-repeat 0px  -22px;
+}
+#elsewhere ul li.lion a:hover,
+#elsewhere ul li.lion a:focus{
+	background: transparent url('../i/social_sprites_hi.png') no-repeat 0px  -22px;
+}
+
+#elsewhere ul li.git a{
+	background: transparent url('../i/social_sprites.png') no-repeat -0px  -44px;
+}
+#elsewhere ul li.git a:hover,
+#elsewhere ul li.git a:focus{
+	background: transparent url('../i/social_sprites_hi.png') no-repeat -0px  -44px;
+}
+
+#elsewhere ul li.plus a{
+	background: transparent url('../i/social_sprites.png') no-repeat -0px -66px;
+}
+#elsewhere ul li.plus a:hover,
+#elsewhere ul li.plus a:focus{
+	background: transparent url('../i/social_sprites_hi.png') no-repeat -0px -66px;
+}
+
+#recent ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#recent li{
+	background-image: url(../i/article_ribbon.png);
+	background-repeat: no-repeat;
+	background-position: 0 .7em;
+	padding-left: 1.5em;
+	display: block;
+}
+
+#taglist ul.proj-thumbs li{
+	float: left;
+	margin: 0 8%  8% 0;
+}
+
+
+
+
+
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+  
+  #nav{
+  	
+  	font-size: .8em;
+  }
+  
+  header#banner{
+  
+  	height: 150px;
+  	margin-bottom: -50px;
+  
+  }
+  
+  h2#tag{
+  	position: absolute;
+  	width: 92%;
+  	float: left;
+  	margin-top: 120px;
+  	margin-left: 0px;
+  	font-size: 1.4em;
+  	font-style: italic;
+  	color: #999;
+  }
+  
+  .work-detail{
+  	width: 45%;
+  	float: right;
+  
+  }
+  
+  .work-image-slideshow{
+  	width: 51%;
+  	float: left;
+  	margin-left: 0;
+  }
+  
+  
+  
+ 
+  
+}
+
+
+@media only screen and (min-width: 660px) {
+  /* Style adjustments for viewports 660px and over go here */
+
+section#about ul li{
+	width: 27%;
+	float: left;
+	display: block;
+	margin: 0 1% 2% 0;
+	padding: 0 5% 0 0;
+	
+}
+
+ section#about li.kek h2{
+	padding: 20px 0 0 0;
+	width: 97%;
+	background: none;
+}
+
+ section#about li.spark h2{
+	background: none;
+	padding: 20px 0 0 0;
+	width: 97%;
+}
+
+section#about li.fuel h2{
+ 	background: none;
+	padding: 20px 0 0 0px;
+	width: 97%;
+}
+
+
+
+
+#content{
+	width: 65%;
+	float: left;
+}
+
+#sidebar{
+	width: 28%;
+	float: right;
+}
+
+#recent{
+	width: 30%;
+	float: left;
+	
+}
+#taglist{
+	width: 30%;
+	float: left;
+	margin: 0 0 0 30px;
+}
+
+#elsewhere{
+	width: 30%;
+	float: left;
+	margin: 0 0 0 30px;
+}
+
+
+}
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+  
+  header#banner{
+  	height: 150px;
+  	margin-bottom: 150px;
+  }
+  
+  .logowrap{
+  padding: 0px 20px 0 20px;
+  	background: transparent;
+  }
+  
+  h1#logo{
+  	max-width: 960px;
+  	margin: 0 auto;
+  	position: relative;
+  	
+  }
+  
+   h1#logo a{
+  	display: block;
+  	width: 170px;
+  	height: 270px;
+  	position:relative;
+  	float: left;
+  	top: -10px;
+  	background: transparent url('../i/dav_logo_ribbon.png') no-repeat left top;
+  	z-index: 1000;
+  }
+  
+  
+  
+  h1#logo span{
+  	
+  	width: 120px;
+  	height: 270px;
+  	text-align: center;
+  	margin: 35px auto;
+  	box-shadow: none;
+  	font-size: 1.8em;
+  	line-height: 1.04em;
+  	border-bottom: none;
+  	padding: 1% 1% 2% 1%;
+	  
+  }
+ 
+ h1#logo span:active
+ {
+ 	text-shadow:none;
+ 	margin: 36px 0 0 25px;
+ }
+  
+  h2#tag{
+  	position: relative;
+  	width: 62%;
+  	float: right;
+  	margin-top: 185px;
+  	margin-left: 10px;
+  	font-size: 1.4em;
+  	font-style: italic;
+  	color: #999;
+  }
+  
+  
+  
+  #nav{
+  position: absolute;
+  float: right;
+  left: 390px;
+  width: 60%;
+  margin-top: 45px;
+  
+  	font-size: 1.2em;
+  }
+  
+  section#about li.kek h2{
+  	background:transparent url(../i/kek_icon.png) no-repeat;
+  	padding: 22px 0 0 59px;
+  	width: 88%;
+  	}
+  	
+  	
+  	section#about li.spark h2{
+  		background:transparent url(../i/sparkhouse_icon.png) 0 0px no-repeat;
+  		width: 80%;
+  		padding: 22px 0 0 55px;
+  		}
+  
+  
+  section#about li.fuel h2{
+  
+  	background:transparent url(../i/fuel_icon.png) no-repeat;
+  	padding: 22px 0 0 50px;
+  	width: 80%;
+  	}
+  	
+  	
+  	#main{
+  		margin-top: 40px;
+  	}
+  
+  
+}
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
