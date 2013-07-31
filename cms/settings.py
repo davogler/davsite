@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'cms.urls'
 
 TEMPLATE_DIRS = (
-     os.path.join(ROOT_PATH, 'templates').replace('\\','/'),
+     os.path.join(ROOT_PATH, '../templates').replace('\\','/'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
