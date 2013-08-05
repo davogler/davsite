@@ -2,11 +2,9 @@ from django.conf.urls.defaults import *
 from filebrowser.sites import site
 from django.conf import settings
 from blog.models import Entry
-from blog.feeds import CategoryFeed, LatestEntriesFeed
+from blog.feeds import LatestEntriesFeed
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-feeds = { 'entries': LatestEntriesFeed,
-          'categories': CategoryFeed }
 
 from django.contrib import admin
 admin.autodiscover()
@@ -24,7 +22,8 @@ urlpatterns = patterns('',
 	(r'^blog/categories/', include('blog.urls.categories')),
 	(r'^blog/', include('blog.urls.entries')),
 	(r'^comments/', include('django.contrib.comments.urls')),
-	(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', { 'feed_dict': feeds }),
+	#(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', { 'feed_dict': feeds }), 
+	(r'^feeds/(?P<url>.*)/$', LatestEntriesFeed()),
 	(r'^work/', include('work.urls')),
 	(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
 	(r'^master.html/$', 'views.masterview'),

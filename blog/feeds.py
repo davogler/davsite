@@ -8,10 +8,10 @@ current_site = Site.objects.get_current()
 
 class LatestEntriesFeed(Feed):
     author_name = "David Vogler"
-    copyright = "http://%s/about/copyright/" % current_site.domain
+    copyright = "http://%s/about/" % current_site.domain
     description = "Latest entries posted to %s" % current_site.name
     feed_type = Atom1Feed
-    item_copyright = "http://%s/about/copyright/" % current_site.domain
+    item_copyright = "http://%s/about/" % current_site.domain
     item_author_name = "David Vogler"
     item_author_link = "http://%s/" % current_site.domain
     link = "/feeds/entries/"
@@ -30,21 +30,3 @@ class LatestEntriesFeed(Feed):
         return [c.title for c in item.categories.all()]
 
 
-# Page 144 in Practical Django Projects 2nd ed
-class CategoryFeed(LatestEntriesFeed):
-    def get_object(self, bits):
-        if len(bits) != 1:
-            raise ObjectDoesNotExist
-        return Category.objects.get(slug__exact=bits[0])
-    
-    def title(self, obj):
-        return "%s: Latest entries in category '%s'" % (current_site.name, obj.title)
-    
-    def description(self, obj):
-        return "%s: Latest entries in category '%s'" % (current_site.name, obj.title)
-    
-    def link(self, obj):
-        return obj.get_absolute_url()
-    
-    def items(self, obj):
-        return obj.live_entry_set()[:15]
