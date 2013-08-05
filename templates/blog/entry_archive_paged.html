@@ -45,24 +45,3 @@
 
 
 
-{% block whatis %} 
-
-
-		
-		<div class="pagination">
-		    <span class="step-links">
-		        {% if listy.has_previous %}
-		            <a href="/blog/page/{{ listy.previous_page_number }}">previous</a>
-		        {% endif %}
-		
-		        <span class="current">
-		            Page {{ listy.number }} of {{ listy.paginator.num_pages }}.
-		        </span>
-		
-		        {% if listy.has_next %}
-		            <a href="/blog/page/{{ listy.next_page_number }}">next</a>
-		        {% endif %}
-		    </span>
-		</div>
-{% endblock %}
-

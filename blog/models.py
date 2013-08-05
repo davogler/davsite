@@ -80,34 +80,3 @@ class Entry(models.Model):
 	get_absolute_url = models.permalink(get_absolute_url)
 
 		
-class Link(models.Model):
-	title = models.CharField(max_length=250)
-	description = models.TextField(blank=True)
-	description_html = models.TextField(editable=False, blank=True)
-	url = models.URLField(unique=True)
-	posted_by = models.ForeignKey(User)
-	pub_date = models.DateTimeField(default=datetime.datetime.now)
-	slug = models.SlugField(unique_for_date='pub_date')
-	
-	enable_comments = models.BooleanField(default=False)
-	via_name = models.CharField('via', max_length=250, blank=True, help_text='The name of a person whose site you found this on. Optional.')
-	via_url = models.URLField('via URL', blank=True, help_text='The URL of the site where you spotted this. Optional.')
-	
-	
-	class Meta:
-		ordering = ['-pub_date']
-		
-	def __unicode__(self):
-		return self.title
-		
-	def save(self):
-		if self.description:
-			self.description_html = markdown(self.description)
-		super(Link, self).save()
-		
-	def get_absolute_url(self):
-		return ('blog_link_detail', (), { 'year': self.pub_date.strftime('%Y'),'month': self.pub_date.strftime('%b').lower(), 'day': self.pub_date.strftime('%d'), 'slug': self.slug })
-	
-	get_absolute_url = models.permalink(get_absolute_url)
-
-		

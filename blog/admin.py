@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django import forms
-from blog.models import Category, Entry, Link
+from blog.models import Category, Entry
 
 class CategoryAdmin(admin.ModelAdmin): 
 	prepopulated_fields = { 'slug': ['title'] }
@@ -18,10 +18,4 @@ class EntryAdmin(admin.ModelAdmin):
 
 	
 admin.site.register(Entry, EntryAdmin)
-
-class LinkAdmin(admin.ModelAdmin): 
-	prepopulated_fields = { 'slug': ['title'] }
-
-	
-admin.site.register(Link, LinkAdmin)
 

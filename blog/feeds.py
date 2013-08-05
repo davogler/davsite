@@ -2,7 +2,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.utils.feedgenerator import Atom1Feed
 from django.contrib.sites.models import Site
 from django.contrib.syndication.views import Feed
-from blog.models import Category, Entry, Link
+from blog.models import Category, Entry
 
 current_site = Site.objects.get_current()
 
@@ -28,29 +28,6 @@ class LatestEntriesFeed(Feed):
     
     def item_categories(self, item):
         return [c.title for c in item.categories.all()]
-
-
-class LatestLinksFeed(Feed):
-    author_name = "David Vogler"
-    copyright = "http://%s/about/copyright/" % current_site.domain
-    description = "Latest entries posted to %s" % current_site.name
-    feed_type = Atom1Feed
-    item_copyright = "http://%s/about/copyright/" % current_site.domain
-    item_author_name = "David Vogler"
-    item_author_link = "http://%s/" % current_site.domain
-    link = "/feeds/links/"
-    title = "%s: Latest links" % current_site.name
-    
-    def items(self):
-        return Link.objects.all()[:15]
-    
-    def item_pubdate(self, item): 
-        return item.pub_date
-    
-    def item_guid(self, item):
-        return "tag:%s,%s:%s" % (current_site.domain, item.pub_date.strftime('%Y-%m-%d'), item.get_absolute_url())
-    
-    
 
 
 # Page 144 in Practical Django Projects 2nd ed

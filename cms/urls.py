@@ -2,12 +2,11 @@ from django.conf.urls.defaults import *
 from filebrowser.sites import site
 from django.conf import settings
 from blog.models import Entry
-from blog.feeds import CategoryFeed, LatestEntriesFeed, LatestLinksFeed
+from blog.feeds import CategoryFeed, LatestEntriesFeed
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 feeds = { 'entries': LatestEntriesFeed,
-          'categories': CategoryFeed,
-          'links': LatestLinksFeed }
+          'categories': CategoryFeed }
 
 from django.contrib import admin
 admin.autodiscover()
@@ -23,18 +22,13 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 	(r'^search/$', 'cms.search.views.search'), 
 	(r'^blog/categories/', include('blog.urls.categories')),
-	(r'^blog/links/', include('blog.urls.links')),
-	
 	(r'^blog/', include('blog.urls.entries')),
 	(r'^comments/', include('django.contrib.comments.urls')),
 	(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed', { 'feed_dict': feeds }),
 	(r'^work/', include('work.urls')),
-	#(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT }),
 	(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
 	(r'^master.html/$', 'views.masterview'),
-	#(r'^templates/master.html$', 'views.masterview'),
-	
-	
+
 )
 
 urlpatterns += staticfiles_urlpatterns()
